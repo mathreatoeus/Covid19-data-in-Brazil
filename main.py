@@ -51,7 +51,7 @@ grafico_vacinas = px.line(data_frame, x='date', y='Vacinados (terceira dose)', t
 grafico_vacinas.update_layout(xaxis_title='Data', yaxis_title='Vacinações', title={'x': 0.5})
 
 st.title('Covid 19 - Casos e Óbitos - Brasil')
-st.write('Selecione o estado e a informação que deseja acessar. O gráfico será gerado automaticamente.')
+st.write('Selecione o estado e a informação que deseja acessar. O gráfico será gerado automaticamente. Abaixo, gráfico com o número de vacinações (terceira dose) para comparação')
 st.caption('Os dados foram obtidos em: https://github.com/wcota/covid19br')
 
 st.plotly_chart(grafico_info_geral, use_container_width=True)
