@@ -56,3 +56,4 @@ st.write('Selecione o estado e a informação que deseja acessar. O gráfico ser
 st.caption('Os dados foram obtidos em: https://github.com/wcota/covid19br')
 
 st.plotly_chart(grafico_info_geral, use_container_width=True)
+st.plotly_chart(grafico_efetividade_vacinas, use_container_width=True)
