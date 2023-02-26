@@ -47,13 +47,12 @@ data_frame = data_frame[data_frame['state'] == selecao_estado]
 grafico_info_geral = px.line(data_frame, x='date', y=selecao_coluna, title=selecao_coluna + ' - ' + selecao_estado)
 grafico_info_geral.update_layout(xaxis_title = 'Data', yaxis_title = selecao_coluna.upper(), title={'x': 0.5})
 
-grafico_efetividade_vacinas = px.line(data_frame, x='date', y='Novos Casos', title='Efetividade das vacinas' + ' - ' + selecao_estado)
-grafico_efetividade_vacinas.add_scatter(x=data_frame['date'], y=data_frame['Vacinados (terceira dose)'], title='Automatic Labels Based on Data Frame Column Names')
-grafico_efetividade_vacinas.update_layout(xaxis_title='Data', yaxis_title='Efetividade das vacinas', title={'x': 0.5})
+grafico_vacinas = px.line(data_frame, x='date', y='Vacinados (terceira dose)', title='Vacinações (terceira dose)' + ' - ' + selecao_estado)
+grafico_vacinas.update_layout(xaxis_title='Data', yaxis_title='Vacinações', title={'x': 0.5})
 
 st.title('Covid 19 - Casos e Óbitos - Brasil')
 st.write('Selecione o estado e a informação que deseja acessar. O gráfico será gerado automaticamente.')
 st.caption('Os dados foram obtidos em: https://github.com/wcota/covid19br')
 
 st.plotly_chart(grafico_info_geral, use_container_width=True)
-st.plotly_chart(grafico_efetividade_vacinas, use_container_width=True)
+st.plotly_chart(grafico_vacinas, use_container_width=True)
