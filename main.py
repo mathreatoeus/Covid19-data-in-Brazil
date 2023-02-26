@@ -56,7 +56,7 @@ st.write('Selecione o estado e a informação que deseja acessar. O gráfico ser
 with st.empty():
     st.metric(label=f'Últmo dado sobre {selecao_coluna} em {selecao_estado.upper()}', value=data_frame[selecao_coluna].iloc[-1])
 
-st.caption('Os dados foram obtidos em: https://github.com/wcota/covid19br')
-
 st.plotly_chart(grafico_info_geral, use_container_width=True)
 st.plotly_chart(grafico_vacinas, use_container_width=True)
+
+st.caption('Os dados foram obtidos em: https://github.com/wcota/covid19br')
