@@ -47,7 +47,7 @@ data_frame = data_frame[data_frame['state'] == selecao_estado]
 grafico_info_geral = px.line(data_frame, x='date', y=selecao_coluna, title=selecao_coluna + ' - ' + selecao_estado)
 grafico_info_geral.update_layout(xaxis_title = 'Data', yaxis_title = selecao_coluna.upper(), title={'x': 0.5})
 
-grafico_efetividade_vacinas = px.line(data_frame, x='date', y='Óbitos', title='Efetividade das vacinas' + ' - ' + selecao_estado)
+grafico_efetividade_vacinas = px.line(data_frame, x='date', y='Novos Óbitos', title='Efetividade das vacinas' + ' - ' + selecao_estado)
 grafico_efetividade_vacinas.add_scatter(x=data_frame['date'], y=data_frame['Vacinados (terceira dose)'])
 grafico_efetividade_vacinas.update_layout(xaxis_title='Data', yaxis_title='Efetividade das vacinas', title={'x': 0.5})
 
