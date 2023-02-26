@@ -28,14 +28,14 @@ colunas = ('Novos Óbitos', 'Novos Casos', 'Óbitos por 100 mil habitantes', 'Ca
 
 selecao_coluna = st.sidebar.selectbox(
     'Selecione a informação',
-    estados
+    colunas
 )
 
  # Plotagem dos dados 
 
 data_frame = data_frame[data_frame['state'] == selecao_estado]
 
-grafico = px.line(data_frame, x = 'date', y = selecao_coluna, title = selecao_coluna + ' - ' + selecao_estado)
+grafico = px.line(data_frame, x='date', y=selecao_coluna, title = selecao_coluna + ' - ' + selecao_estado)
 grafico.update_layout(xaxis_title = 'Data', yaxis_title = selecao_coluna.upper(), title = {'x': 0.5})
 
 st.title('Covid 19 - Casos e Óbitos - Brasil')
