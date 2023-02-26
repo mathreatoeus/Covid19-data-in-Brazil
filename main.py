@@ -47,6 +47,8 @@ data_frame = data_frame[data_frame['state'] == selecao_estado]
 grafico_info_geral = px.line(data_frame, x='date', y=selecao_coluna, title=selecao_coluna + ' - ' + selecao_estado)
 grafico_info_geral.update_layout(xaxis_title = 'Data', yaxis_title = selecao_coluna.upper(), title={'x': 0.5})
 
+st.metric(label=f'Últmo dado sobre {selecao_coluna} em {selecao_estado.upper()}', value=data_frame[selecao_coluna].iloc[-1])
+
 grafico_vacinas = px.line(data_frame, x='date', y='Vacinados (terceira dose)', title='Vacinações (terceira dose)' + ' - ' + selecao_estado)
 grafico_vacinas.update_layout(xaxis_title='Data', yaxis_title='Vacinações', title={'x': 0.5})
 
